@@ -1,7 +1,13 @@
+1. make up EchoTest.java to show an Echo client/server example.
+
+2. Add more api to implement functions in io_uring_prep_* functions in include/liburing.h
+
+   Below is a table of current and possible api with corresponding IORING_OP_* codes (for each of which there is generally a corresponding io_uring_prep_* function).
+
 ```
                              Request        Socket         File           Directory      IOCtl          Event
-                               -Builder
-
+    * = TODO                  -Builder
+                            -------------  -------------  -------------  -------------  -------------  -------------
    _OP_NOP                   nop()
    _OP_READV                                read([])       read([])
    _OP_WRITEV                               write([])      write([])
@@ -30,7 +36,7 @@
    _OP_MADVISE                                                                           *madvise()
    _OP_SEND                                 *send()
    _OP_RECV                                 *recv()
-   _OP_OPENAT2,                                                           *openAt()
+   _OP_OPENAT2                                                             *openAt()
    _OP_EPOLL_CTL                                                                                        *epoll()
    _OP_SPLICE                                                                            *splice()
    _OP_PROVIDE_BUFFERS       *buffers()
