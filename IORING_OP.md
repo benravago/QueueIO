@@ -1,3 +1,6 @@
+
+Annotated IORING_OP values from include/liburing/io_uring.h noting the related c posix (or linux) api.
+
 ```
 enum {
   // see io_uring_enter(2) man page
@@ -14,10 +17,10 @@ enum {
 
   IORING_OP_WRITEV,
     writev - write data from multiple buffers
-      ssize_t writev(int fd, const struct iovec *iov, int iovcnt);
-      --
+    ssize_t writev(int fd, const struct iovec *iov, int iovcnt);
+    --
     pwritev2 - write data from multiple buffers
-      ssize_t pwritev2(int fd, const struct iovec *iov, int iovcnt, off_t offset, int flags);
+    ssize_t pwritev2(int fd, const struct iovec *iov, int iovcnt, off_t offset, int flags);
 
   IORING_OP_FSYNC,
     fsync - synchronize a file's in-core state with storage device
@@ -43,7 +46,7 @@ enum {
 
   IORING_OP_RECVMSG,
     recvmsg - receive a message from a socket
-      ssize_t recvmsg(int sockfd, struct msghdr *msg, int flags);
+    ssize_t recvmsg(int sockfd, struct msghdr *msg, int flags);
 
   IORING_OP_TIMEOUT,
     ** Register a timeout operation
@@ -92,9 +95,9 @@ enum {
 
   IORING_OP_WRITE,
     write - write to a file descriptor
-      ssize_t write(int fd, const void *buf, size_t count);
-      --
-      pwrite - write to a file descriptor at a given offset
+    ssize_t write(int fd, const void *buf, size_t count);
+    --
+    pwrite - write to a file descriptor at a given offset
     ssize_t pwrite(int fd, const void *buf, size_t count, off_t offset);
 
   IORING_OP_FADVISE,
@@ -111,7 +114,7 @@ enum {
 
   IORING_OP_RECV,
     recv, recvfrom, recvmsg - receive a message from a socket
-      ssize_t recvfrom(int sockfd, void *buf, size_t len, int flags, struct sockaddr *src_addr, socklen_t *addrlen);
+    ssize_t recvfrom(int sockfd, void *buf, size_t len, int flags, struct sockaddr *src_addr, socklen_t *addrlen);
 
   IORING_OP_OPENAT2,
     openat2 - open and possibly create a file (extended)
