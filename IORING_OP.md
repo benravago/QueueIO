@@ -152,6 +152,15 @@ enum {
   IORING_OP_MKDIRAT,
     mkdirat - create a directory relative to a directory file descriptor
     int mkdirat(int dirfd, const char *pathname, mode_t mode);
+    
+  IORING_OP_SYMLINKAT,
+    symlinkat - create a symbolic link relative to a directory file descriptor 
+    int symlinkat(const char *oldpath, int newdirfd, const char *newpath);
+    
+  IORING_OP_LINKAT,
+    linkat - create a file link relative to directory file descriptors 
+    int linkat(int olddirfd, const char *oldpath, int newdirfd, const char *newpath, int flags);
+
 
   /* this goes last, obviously */
   IORING_OP_LAST,
